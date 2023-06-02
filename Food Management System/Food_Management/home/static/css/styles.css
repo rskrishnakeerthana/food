@@ -1,0 +1,23 @@
+.bg-image{
+    background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/026.webp');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: 90px;
+    height: 580px;
+}
+.heading{
+    font-family:'Algerian';
+}
+.para{
+    font-family: 'Times New Roman';
+}
+.mrgn{
+    margin-top: 0px;
+}
+.card img{
+    height: 200px;
+    width: auto;
+}
+.card{
+    margin-top: 10px;
+}

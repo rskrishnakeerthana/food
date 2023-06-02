@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Order View{% endblock %}
+{% block sub_list %}
+  {% for i in food %}
+    <a href="/categories/{{i.id}}" class="dropdown-item">{{i.foodcate_name}}</a>
+  {% endfor %}
+{% endblock %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 px-5">
+                {% for msg in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        <strong>Hey!</strong>{{msg}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        </button>
+                    </div>
+                {% endfor %}
+                <table class="table table-borderd">
+                    <thead>
+                        <tr>
+                            <th>Sl.No</th>
+                            <th>Food Name</th>
+                            <th>Quantity</th>
+                            <th>Customer Email</th>
+                            <th>Mobile Number</th>
+                            <th>Message</th>
+                            <!-- <th>Update</th>
+                            <th>Delete</th> -->
+                        </tr>
+                    </thead>
+                    {% for i in order %}
+                    <tbody>
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{i.food_name}}</td>
+                            <td>{{i.food_quantity}}</td>
+                            <td>{{i.customer_email}}</td>
+                            <td>{{i.customer_Mobile}}</td>
+                            <td>{{i.message}}</td>
+                            <td><a href="/home/update/{{i.id}}" class="btn btn-success">update</a></td>
+                            <td><a href="/home/delete/{{i.id}}" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}   
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %} 

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Order{% endblock %}
+{% block sub_list %}
+  {% for i in food %}
+    <a href="/categories/{{i.id}}" class="dropdown-item">{{i.foodcate_name}}</a>
+  {% endfor %}
+{% endblock %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+                <h1 style="text-align: center" class="heading">Odrer Now</h1><br>
+                <form action="" method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Food Name:</label>
+                        <input type="text" class="form-control" id="Pname" name="FoodName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Number" class="form-label">Quantity:</label>
+                        <input type="number" class="form-control" id="quantity" name="Quantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Mobile Number" class="form-label">Mobile Number:</label>
+                        <input type="text" class="form-control" id="Mobile Number" name="MobileNumber">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1">Categories:</label>
+                        <select class="form-control" id="exampleFormControlTextarea1" name="Cate">
+                            <!-- <option>...</option> -->
+                            {% for cate in cate_c %}
+                                <option value="{{cate.id}}">{{cate.foodcate_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Message"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-primary"> 
+                    </div>           
+                </form>
+            </div>
+        </div>
+        
+    </div>       
+</section>  
+{% endblock %}

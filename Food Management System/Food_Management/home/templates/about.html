@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+{% block sub_list %}
+  {% for i in food %}
+    <a href="/categories/{{i.id}}" class="dropdown-item">{{i.foodcate_name}}</a>
+  {% endfor %}
+{% endblock %}
+{% block content %}
+
+<section class="mb-0">
+  <div class="bg-image  text-center shadow-1-strong rounded text-white mrgn">
+    <marquee direction="right" behavior="slide" width="25%" >
+      <h1 class="heading text-white">ABOUT US</h1>
+    </marquee>
+    <marquee behavior="slide"  direction="up" height="50%">
+      <p class="para text-justify">
+        The Food Recovery Provide a Good Services. You can Oder anytime. You need for our Service anytime and anywhere.
+        The term food quality represents the sum of all properties and attributes of a food item that are acceptable to the customer.
+        These food quality attributes include appearance, including size, shape, gloss, colour, and consistency, texture, flavour, and nutritional content.
+        Food quality control is incredibly important to ensure consumers are eating and handling safe food items. It can protect customers from dangers such as contaminated foods while also ensuring they receive the weight and quality of food they have paid for.
+      </p>
+    </marquee>
+  </div>
+</section>
+
+{% endblock %}

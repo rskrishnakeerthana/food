@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact Us{% endblock %}
+{% block sub_list %}
+  {% for i in food %}
+    <a href="/categories/{{i.id}}" class="dropdown-item">{{i.foodcate_name}}</a>
+  {% endfor %}
+{% endblock %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+                <h1 style="text-align: center" class="heading">Contact Form</h1><br>
+                <form action="" method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="Username" name="userName">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Mobile Number" class="form-label">Mobile Number:</label>
+                        <input type="text" class="form-control" id="Mobile Number" name="MobileNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Message"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-primary mb-3"> 
+                    </div>           
+                </form>
+            </div>
+        </div>
+        
+    </div>       
+</section>  
+{% endblock %}

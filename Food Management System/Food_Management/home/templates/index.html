@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Index{% endblock %}
+{% block sub_list %}
+  {% for i in food %}
+    <a href="/categories/{{i.id}}" class="dropdown-item">{{i.foodcate_name}}</a>
+  {% endfor %}
+{% endblock %}
+{% block content %}
+    <!-- <h1 class="text-primary">Welcome to Food Recovery</h1> -->
+    <section class="mt-0">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'image/carousel1.jpg' %}" class="d-block w-100" height="500px">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'image/carousel2.jpg' %}" class="d-block w-100" height="500px">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'image/carousel3.jpg' %}" class="d-block w-100" height="500px">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden"></span>
+            </button>
+          </div>
+    </section> 
+    <!-- <section class="pt-5 mt-5">
+        <div class="bg-image pt-5 text-center shadow-1-strong rounded mb-5 text-white">
+        
+        <marquee direction="right" behaviour="alternate" >
+          <h1 class="mb-5 heading text-white">ABOUT US</h1>
+        </marquee>
+        <marquee behaviour="alternate">
+          <p class="para text-justify">
+            The Food Recovery Provide a Good Services. You can Oder anytime. You need for our Service anytime and anywhere.
+            The term food quality represents the sum of all properties and attributes of a food item that are acceptable to the customer.
+            These food quality attributes include appearance, including size, shape, gloss, colour, and consistency, texture, flavour, and nutritional content.
+            Food quality control is incredibly important to ensure consumers are eating and handling safe food items. It can protect customers from dangers such as contaminated foods while also ensuring they receive the weight and quality of food they have paid for.
+          </p>
+        </marquee>
+      </div>
+    </section> -->
+
+{% endblock %}

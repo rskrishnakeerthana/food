@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}SubCategories{% endblock %}
+{% block content %}
+
+<section>
+  <marquee behavior="slide" direction="up" height="40%">
+    <h1 class="heading text-center">Available Food Items</h1>
+  </marquee>
+    <div class="container mb-3">
+      <marquee behavior="slide" direction="down" height="auto">
+        <div class="row">
+        {% for s in subcate %}
+          <div class="col-md-3">
+            <div class="card">
+              <img src="/media/{{s.sub_image}}">
+              <div class="card-body">
+                <h5 class="card-title">{{s.sub_name}}</h5>
+                <p class="card-text">{{s.sub_price}}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </marquee>
+      </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Categories{% endblock %}
+{% block content %}
+
+<section>
+  <marquee behavior="slide" direction="up" height="40%">
+    <h1 class="heading text-center">Categories</h1>
+    </marquee>
+    <div class="container mb-3">
+      <marquee behavior="slide" direction="down" height="auto" >
+        <div class="row">
+        {% for c in food %}
+          <div class="col-md-4 col-sm-6">
+            <div class="card" style="width: 18rem;">
+              <img src="/media/{{c.sub_image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{c.sub_name}}</h5>
+                <p class="card-text">{{c.sub_price}}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </marquee>
+      </div>
+</section>
+
+{% endblock %}
